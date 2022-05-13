@@ -1,0 +1,10 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: v1.23.6	
+imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers
+#master地址
+controlPlaneEndpoint: "192.168.1.55:6443"  # 这里需要改自己的配置	
+networking:
+  serviceSubnet: "10.96.0.0/16"	 # 这里自定义k8s的service网段
+  podSubnet: "10.20.0.1/16"	     # 这里自定义k8s的pod网段
+  dnsDomain: "cluster.local"
